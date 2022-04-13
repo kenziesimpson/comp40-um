@@ -22,10 +22,14 @@ static struct test_info {
     const char *expected_output;
     /* writes instructions into sequence */
     void (*build_test)(Seq_T stream);
-} tests[] = {{"halt", NULL, "", build_halt_test},
-             {"halt-verbose", NULL, "", build_verbose_halt_test},
-             {"add", NULL, "", build_add_test},
-             {"print-six", NULL, "6", build_verbose_add_test}};
+} tests[] = {{"halt_test", NULL, "", build_halt_test},
+            {"output_test", NULL, "", build_output_test},
+            {"output_fail", NULL, "", build_output_fail},
+            {"add_test", NULL, "", build_add_test},
+            {"round_test", NULL, "", build_round_test},
+            {"mapping_test", NULL, "", build_mapping_test},
+            {"loading_test", NULL, "", build_loading_test},
+            {"input_test", NULL, "", build_input_test}};
 
 #define NTESTS (sizeof(tests) / sizeof(tests[0]))
 
